@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索引擎选择器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        #bingButton {
+            background-color: #0082C9;
+            color: white;
+        }
+        #googleButton {
+            background-color: #34A853;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <button id="bingButton" onclick="searchBing()">Bing</button>
+    <input type="text" id="searchQuery" placeholder="请输入搜索内容">
+    <button id="googleButton" onclick="searchGoogle()">Google</button>
+</div>
+
+<script>
+    function searchBing() {
+        var query = document.getElementById("searchQuery").value;
+        if (query) {
+            window.open('https://www.bing.com/search?q=' + encodeURIComponent(query), '_blank');
+        }
+    }
+
+    function searchGoogle() {
+        var query = document.getElementById("searchQuery").value;
+        if (query) {
+            window.open('https://www.google.com/search?q=' + encodeURIComponent(query), '_blank');
+        }
+    }
+</script>
+
+</body>
+</html>
